@@ -61,6 +61,7 @@ git -C "${WORK_DIR}" add "${CHART_YAML}"
 git -C "${WORK_DIR}" commit -m "Update Chart version to - v${NEW_TAG_VERSION}"
 git -C "${WORK_DIR}" push
 
+echo "Version updated in chart"
 
 mkdir pipelines
 
