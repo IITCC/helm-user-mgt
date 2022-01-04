@@ -1,0 +1,36 @@
+
+# Name of the action.
+name: Helm Chart Releaser
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push events but only for certain file changes on the main branch
+  push:
+    branches: [ main ]
+    paths:
+      - values.yaml
+      - 'deploy/**'
+
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Define jobs for the workflow.
+jobs:
+  # Define the job to do the release.
+  helm-chart-releaser:
+    # The type of runner that the job will run on.
+    runs-on: ubuntu-latest
+
+    # Define steps inside the job.
+    steps:
+      # Checks-out the repository from main(default) branch under $GITHUB_WORKSPACE.
+      - uses: actions/checkout@v2
+        with:
+          token: ${{secrets.CC_GITHUB_BOT_TOKEN}}
+
+      # Define a step to execute the script.
+      - name: Run the helm-chart-releaser script
+        env:
+          TOKEN: ${{secrets.CC_GITHUB_BOT_TOKEN}}
+        run: bash release-builder.sh hasinthaindrajee $TOKEN $GITHUB_WORKSPACE
+        id: release-builder
