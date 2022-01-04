@@ -70,12 +70,12 @@ git -C pipelines config user.email "${GIT_EMAIL}"
 git -C pipelines config user.name "${GIT_USERNAME}"
 git -C pipelines checkout dev
 
-HELM_VERSION_LINE=$(grep -w 'HELM_VERSION' "${WORK_DIR}"/user-mgt-fe/dev-setup-variables.yaml | sed 's/ *//')
-sed -i 's|'"${HELM_VERSION_LINE}"'|HELM_VERSION: '"'${TAG}'"'|' "${WORK_DIR}"/user-mgt-fe/dev-setup-variables.yaml
+HELM_VERSION_LINE=$(grep -w 'HELM_VERSION' "${WORK_DIR}"/pipelines/user-mgt-fe/dev-setup-variables.yaml | sed 's/ *//')
+sed -i 's|'"${HELM_VERSION_LINE}"'|HELM_VERSION: '"'${TAG}'"'|' "${WORK_DIR}"/pipelines/user-mgt-fe/dev-setup-variables.yaml
 
 # Push new helm chart release version to dev-setup-variables.yaml.
-git -C pipelines add "${WORK_DIR}"/user-mgt-fe/dev-setup-variables.yaml
-git -C pipelines commit -m "[Dev] Update user mgt helm chart version to - ${TAG}"
+git -C pipelines add "${WORK_DIR}"/pipelines/user-mgt-fe/dev-setup-variables.yaml
+git -C pipelines commit -m "[Dev] Update user mgt FE helm chart version to - ${TAG}"
 git -C pipelines push origin dev
 
 echo "Release builder execution is completed."
