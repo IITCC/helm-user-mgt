@@ -17,7 +17,7 @@ deployment:
     image:
       repository: "isurabuy/user-manager-pro-app"
       tag: '1658821330'
-      pullPolicy: IfNotPresent
+      pullPolicy: Always
     port: 80
 
   # Currently only linux images on amd64 architecture are supported - support for arm64 and windows/amd64 coming ...
