@@ -26,11 +26,11 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: http
+              port: 3000
           readinessProbe:
             httpGet:
               path: /
-              port: http
+              port: 3000
           env:
           {{- if ne (.Values.deployment.container.port | int) (8080 | int) }}
           - name: PORT
