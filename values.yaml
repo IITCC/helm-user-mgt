@@ -16,7 +16,7 @@ deployment:
   container:
     image:
       repository: "isurabuy/user-manager-pro-app"
-      tag: "latest" # uses chart appVersion if not provided
+      tag: '1658821330'
       pullPolicy: IfNotPresent
     port: 80
 
