@@ -9,7 +9,7 @@ on:
     branches: [ main ]
     paths:
       - values.yaml
-      - 'deploy/**'
+      - 'templates/**'
 
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
