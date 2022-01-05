@@ -47,6 +47,8 @@ spec:
             {{- else }}
             value: "{{ .Values.ingress.pathPrefix }}"
             {{- end }}
+          - name: REACT_APP_API_ENDPOINT
+            value: http://user-mgt-be-user-mgt-be:80/
           - name: RENDER_PATH_PREFIX
             value: "{{ .Values.ingress.pathPrefix }}"
           {{- end }}
