@@ -15,10 +15,10 @@ deployment:
   replicaCount: 1
   container:
     image:
-      repository: "paulbouwer/hello-kubernetes"
-      tag: "" # uses chart appVersion if not provided
+      repository: "isurabuy/user-manager-pro-app"
+      tag: "latest" # uses chart appVersion if not provided
       pullPolicy: IfNotPresent
-    port: 8080
+    port: 3000
 
   # Currently only linux images on amd64 architecture are supported - support for arm64 and windows/amd64 coming ...
   nodeSelector:
