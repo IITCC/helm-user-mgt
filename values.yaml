@@ -18,7 +18,7 @@ deployment:
       repository: "isurabuy/user-manager-pro-app"
       tag: "latest" # uses chart appVersion if not provided
       pullPolicy: IfNotPresent
-    port: 3000
+    port: 8080
 
   # Currently only linux images on amd64 architecture are supported - support for arm64 and windows/amd64 coming ...
   nodeSelector:
