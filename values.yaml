@@ -16,7 +16,7 @@ deployment:
   container:
     image:
       repository: "isurabuy/user-manager-pro-app"
-      tag: '1783860888'
+      tag: '1783878580'
       pullPolicy: Always
     port: 80
 
